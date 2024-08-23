@@ -9,7 +9,7 @@ export class TaskService {
     return color + ' ' + age;
   }
   getCar() {
-    return 'Nest JS ';
+    return 'Nest JS Hello World from Dale';
   }
 
   createCard(number) {
