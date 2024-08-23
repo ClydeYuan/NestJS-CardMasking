@@ -18,7 +18,7 @@ export class TaskService {
 
     const maskCardNumber = mask(number, 12, '*');
     this.myCardNumbers.push(maskCardNumber);
-    return ' This is Nest JS file Your masked card number is ' + maskCardNumber;
+    return 'Your masked card number is ' + maskCardNumber;
   }
 
   getCard() {
