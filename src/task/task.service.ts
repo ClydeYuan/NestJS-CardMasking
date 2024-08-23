@@ -13,6 +13,9 @@ export class TaskService {
   }
 
   createCard(number) {
+    const value = number;
+    const cardNumberLength = value.length;
+
     const mask = (str, num, mask) =>
       `${str}`.slice(num).padStart(`${str}`.length, mask);
 
