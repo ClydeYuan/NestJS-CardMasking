@@ -15,10 +15,9 @@ export class TaskService {
   createCard(number) {
     const mask = (str, num, mask) =>
       `${str}`.slice(num).padStart(`${str}`.length, mask);
-
     const maskCardNumber = mask(number, 12, '*');
     this.myCardNumbers.push(maskCardNumber);
-    return ' Your card number is ' + maskCardNumber;
+    return ' Your masked card number is ' + maskCardNumber;
   }
 
   getCard() {
