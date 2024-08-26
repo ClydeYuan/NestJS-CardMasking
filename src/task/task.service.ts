@@ -15,13 +15,15 @@ export class TaskService {
   createCard(number) {
     const value = number;
     const cardNumberLength = value.length;
-
-    const mask = (str, num, mask) =>
-      `${str}`.slice(num).padStart(`${str}`.length, mask);
-
-    const maskCardNumber = mask(number, 12, '*');
-    this.myCardNumbers.push(maskCardNumber);
-    return 'Your masked card number is ' + maskCardNumber;
+    if (cardNumberLength != 16) {
+      return 'Your card number is invalid';
+    } else {
+      const mask = (str, num, mask) =>
+        `${str}`.slice(num).padStart(`${str}`.length, mask);
+      const maskCardNumber = mask(number, 12, '*');
+      this.myCardNumbers.push(maskCardNumber);
+      return 'Your masked card number is ' + maskCardNumber;
+    }
   }
 
   getCard() {

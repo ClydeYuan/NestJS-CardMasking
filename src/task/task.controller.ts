@@ -17,7 +17,7 @@ export class TaskController {
   @Post('/create-card')
   newCard(@Body('number') number) {
     return this.thisIsMyTaskService.createCard(number);
-  } 
+  }
   @Post('/create-card-v2')
   newCards(@Body() reqbody) {
     console.log(reqbody);
