@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { BadRequestException } from '@nestjs/common/exceptions';
 
 @Injectable()
 export class TaskService {
@@ -16,7 +17,7 @@ export class TaskService {
     const value = number;
     const cardNumberLength = value.length;
     if (cardNumberLength != 16) {
-      return 'Your card number is invalid';
+      throw new BadRequestException('Your card number is invalid');
     } else {
       const mask = (str, num, mask) =>
         `${str}`.slice(num).padStart(`${str}`.length, mask);
